@@ -12,4 +12,7 @@ public class Duck extends Pet{
     public String speak() {
         return "Quack";
     }
+
+
+
 }

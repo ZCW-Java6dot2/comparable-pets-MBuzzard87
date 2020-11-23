@@ -1,9 +1,8 @@
 package io.zipcoder;
 import java.lang.Comparable;
-public class Pet {
+public abstract class Pet implements Comparable<Pet>{
     String name;
     String speak = "koo koo ka choo";
-
 
     public Pet(String name) {
         this.name = name;
@@ -21,8 +20,13 @@ public class Pet {
         this.name = name;
     }
 
-
-
-
-
+    public int compareTo(Pet o) {
+        if(this.name.compareTo(o.getName()) > 0) {
+            return 1;
+        } else if (this.name.compareTo(o.getName()) < 0) {
+            return -1;
+        } else {
+            return this.speak().compareTo(o.speak());
+        }
+    }
 }
